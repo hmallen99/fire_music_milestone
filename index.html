@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    background: url('./images/bg.jpg')
+    repeat fixed;
+    background-size:cover;
+    overflow:scroll;
+    padding: 100px;
+    width: 1400px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
+  }
+  .results {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table, tr, td {
+  padding: 12px;
+}
+</style>
+<title>CS 184 Final Project Milestone</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+<h1 align="middle" style="color:white;">CS 184: Computer Graphics and Imaging, Spring 2021</h1>
+<h1 align="middle" style="color:white;">Final Project Milestone: Music-reactive Real-time Fire Simulation</h1>
+<h2 align="middle" style="color:white;">Henry Allen, Priyanka Kargupta, Hannah Ku, Amber Xie</h2>
+
+<br><br>
+
+<div style="background-color: #ffffffeb; padding:40px; border-radius: 25px;">
+
+<h2 align="middle">Project Description</h2>
+<p>
+    In this project, we are creating an audio visualizer using fire simulations that react to changes in features in music like frequency, tempo, and key. 
+    We represent a set of frequency bands as a set of fires, and each fire changes in color, amplitude, or smokiness in real time according to the 
+    aforementioned music feature changes. Our final product will be a video that shows the fire simulations corresponding to a few different songs.
+</p>
+
+<h2 align="middle">Accomplishments</h2>
+<p>
+    Our work up to this point has focused on real time fire rendering. We have been using Three.js for real time rendering with WebGL. Initially, we 
+    were planning to go with a more realistic fire, but we have since learned the limitations of our WebGl API, and have decided to go for something more 
+    stylized. So far, we have created a real-time fire and spark rendering using particles and added perlin noise, and have implemented a smoke effect
+    using a simple navier-stokes fluid simulation.
+</p>
+
+<h2 align="middle">Preliminary Results</h2>
+
+<h3>Smoke Simulation</h3>
+<p>In the video below, we can see smoke coming out of a source in the ground, rising into the air, and wrapping around a ball. Our smoke model uses 
+    the Navier-Stokes model for fluid simulation, and then we add in some temperature advection to account for how smoke rises with hot temperatures
+    and sinks with cool temperatures. 
+</p>
+
+
+<div align="middle">
+    <table style="width=100%">
+        <tr>
+            <td align="middle">
+                <video width="480" height="360" controls>
+                    <source src="video/smoke.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption align="middle">Smoke Video</figcaption>
+            </td>
+            <td align="middle">
+                <img src="./images/smoke_1.PNG" width="480px" />
+                <figcaption align="middle">Smoke Picture</figcaption>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h2 align="middle">Work Plan</h2>
+<h3>Progress relative to work plan</h3>
+<p>
+    We have been a little bit behind schedule on getting our fire rendering done, as we had originally planned to be done with the fire rendering
+    and have moved on to the audio implementation by now. The WebGL rendering environment was a bit tricky to set up, but now that we have all of the
+    individual parts working, it shouldn't take much longer to finish our fire implementation. We primarily have to integrate the smoke simulation into 
+    the particle fire We also spent more time in week 1 deciding on how we would
+    implement the model, and how it should look. Luckily, we built in a good amount of buffer room into our schedule. We also will likely not finish
+    some of our aspirational goals, like adding more effects to our fire and connecting to a Spotify API.
+</p>
+
+<h3>Updated work plan</h3>
+<p>
+    <b>Week 3:</b>
+    <ul>
+        <li>
+            Integrate smoke simulation into fire model
+        </li>
+        <li>
+            Implement parameterization for fires, so that we will later be able to modulate amplitude and color with
+            audio cues
+        </li>
+        <li>
+            Implement an API for discrete Fourier transform in our JavaScript webapp, apply it to some demo songs to generate
+            parameters for the fire modulation.
+        </li>
+    </ul>
+    <b>Week 4:</b>
+    <ul>
+        <li>
+            Integrate audio and fire simulation. This will consist of creating a row of individual fires that change color
+            and amplitude based on our audio analysis
+        </li>
+        <li>
+            Create video demo and final presentation.
+        </li>
+    </ul>
+</p>
+
+<h2 align="middle">Update Video</h2>
+TODO: Link here
+
+<h2 align="middle">Presentation Slides</h2>
+TODO: Link here
+
+</body>
+</html>
