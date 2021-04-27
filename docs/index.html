@@ -86,13 +86,38 @@ table, tr, td {
     </table>
 </div>
 
+<h3>Realistic Fire Rendering</h3>
+<p>
+    As we began to render fire, we realized how important it was for it to be physically realistic. We've incorporated drag and gravity in order to model the physics of the simulation. In addition, we have now added low pressure points that particles gravitate toward. In the video below, the pressure points are exaggerated so their effect is clear to the viewer. We plan to finalize adjustment of our parameters (including particle size, particle life span, etc.) to ensure the most realistic fire rendering. 
+</p>
+
+
+<div align="middle">
+    <table style="width=100%">
+        <tr>
+            <td align="middle">
+                <video width="480" height="360" controls>
+                    <source src="video/pressure_points.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption align="middle">Pressure points</figcaption>
+            </td>
+            <td align="middle">
+                <img src="./images/pressure_points.png" width="480px" />
+                <figcaption align="middle">Particle System Picture</figcaption>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
 <h2 align="middle">Work Plan</h2>
 <h3>Progress relative to work plan</h3>
 <p>
     We have been a little bit behind schedule on getting our fire rendering done, as we had originally planned to be done with the fire rendering
     and have moved on to the audio implementation by now. The WebGL rendering environment was a bit tricky to set up, but now that we have all of the
     individual parts working, it shouldn't take much longer to finish our fire implementation. We primarily have to integrate the smoke simulation into 
-    the particle fire We also spent more time in week 1 deciding on how we would
+    the particle fire. We also spent more time in week 1 deciding on how we would
     implement the model, and how it should look. Luckily, we built in a good amount of buffer room into our schedule. We also will likely not finish
     some of our aspirational goals, like adding more effects to our fire and connecting to a Spotify API.
 </p>
