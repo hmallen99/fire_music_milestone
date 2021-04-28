@@ -115,15 +115,53 @@ table, tr, td {
     To add some details to our fires, we created new fire embers. These embers are also particles, but they have different properties, including a different texture, velocity settings, drag, and more. 
 </p>
 
+<div align="middle">
+    <table style="width=100%">
+        <tr>
+            <td align="middle">
+                <video width="480" height="360" controls>
+                    <source src="video/shortembers.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption align="middle">Fire Embers Video</figcaption>
+            </td>
+            <td align="middle">
+                <img src="./images/embers.png" width="480px" />
+                <figcaption align="middle">Fire Embers Picture</figcaption>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h3>Audio Visualization</h3>
+<p>
+    Finally, on a separate branch, we integrated the WebAudio API with our particle system in order to visualize the frequencies of a user-selected audio clip using a Fast Fourier Transform of size 256. The audio frequencies were visualized through the velocity/height of the fire particles as well as their color, interpolated over a spline based on the individual particle’s time alive and RGB endpoints set based on the current frequency.
+
+</p>
+
+<div align="middle">
+    <table style="width=100%">
+        <tr>
+            <td align="middle">
+                <iframe src="https://drive.google.com/file/d/1w9hCaLMoGEl5Imhl3SXRqAoCT6gNTIV0/preview" width="480" height="360" allowfullscreen></iframe>
+                <figcaption align="middle">Audio Visualization Music Video (Song: Funky Galileo - Sure Sure). <br>Click the top right corner icon to open video in a new tab if preview does not load.</figcaption>
+            </td>
+            <td align="middle">
+                <img src="./images/audiovis.png" width="480px" />
+                <figcaption align="middle">Audio Visualization Picture</figcaption>
+            </td>
+        </tr>
+    </table>
+</div>
+
 <h2 align="middle">Work Plan</h2>
 <h3>Progress relative to work plan</h3>
 <p>
-    We have been a little bit behind schedule on getting our fire rendering done, as we had originally planned to be done with the fire rendering
-    and have moved on to the audio implementation by now. The WebGL rendering environment was a bit tricky to set up, but now that we have all of the
+    We have been a bit ahead of schedule on getting our fire rendering and audio analysis implemented, as we had originally planned to be done with the fire rendering and audio implementation by Week 2 and working on incorporating the fire with the audio analysis by Week 3-- which we have already significantly begun working on. The WebGL rendering environment was a bit tricky to set up, but now that we have all of the
     individual parts working, it shouldn't take much longer to finish our fire implementation. We primarily have to integrate the smoke simulation into 
     the particle fire. We also spent more time in week 1 deciding on how we would
-    implement the model, and how it should look. Luckily, we built in a good amount of buffer room into our schedule. We also will likely not finish
-    some of our aspirational goals, like adding more effects to our fire and connecting to a Spotify API.
+    implement the model, and how it should look. Luckily, we built in a good amount of buffer room into our schedule, so that we can potentially finish
+    some of our aspirational goals, like adding more effects to our fire (e.g. color schemes) and integrating the Spotify API.
 </p>
 
 <h3>Updated work plan</h3>
@@ -131,22 +169,19 @@ table, tr, td {
     <b>Week 3:</b>
     <ul>
         <li>
-            Integrate smoke simulation into fire model
+            Merge all four parts (smoke simulation, realistic particle fire simulation, fire embers, and audio visualization).
         </li>
         <li>
-            Implement parameterization for fires, so that we will later be able to modulate amplitude and color with
-            audio cues
+            Accentuate the differences in frequencies via amplitude and color based on mean and standard deviation/overall distribution of frequencies outputted by the FFT of the audio clip.
         </li>
         <li>
-            Implement an API for discrete Fourier transform in our JavaScript webapp, apply it to some demo songs to generate
-            parameters for the fire modulation.
+            Fix the awkward animation looping which causes the particle generation to abruptly end and restart-- make the rendering smoother.
         </li>
     </ul>
     <b>Week 4:</b>
     <ul>
         <li>
-            Integrate audio and fire simulation. This will consist of creating a row of individual fires that change color
-            and amplitude based on our audio analysis
+            Integrate the Spotify API to include energy of the audio clip to adjust the color scheme accordingly and/or allow a user to select a song from Spotify.
         </li>
         <li>
             Create video demo and final presentation.
@@ -155,8 +190,19 @@ table, tr, td {
 </p>
 
 <h2 align="middle">Update Video</h2>
-TODO: Link here
-
+<div align="middle">
+    <table style="width=100%">
+        <tr>
+            <td align="middle">
+                <video width="480" height="360" controls>
+                    <source src="video/184checkpoint.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption align="middle">Overview/Demo Video</figcaption>
+            </td>
+        </tr>
+    </table>
+</div>
 <h2 align="middle">Presentation Slides</h2>
 <center><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRXr7FeGkoOP47BwVaneMVLIBaMA7d-vDyUgeNv7W6Lht66DP8aT1fzLsL6YYA85AkmEiPLtywxMk2_/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></center>
 
